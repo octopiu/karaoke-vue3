@@ -1,0 +1,17 @@
+<v-layout class="rounded rounded-md">
+    <v-app-bar>
+      <v-app-bar-title>Karaoke cutter</v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn @click="openAppendVideoDialog">Add new video</v-btn>
+      <v-btn @click="downloadClipsList">Download clips list</v-btn>
+    </v-app-bar>
+
+    <v-navigation-drawer>
+      <v-list density="compact" nav :items="videos" @click:select="onSelect">
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-main class="d-flex align-center justify-center" style="min-height: 300px;">
+      <KaraokeVideo :clip="currentClip" @start-update="updateStart" @end-update="updateEnd" @title-update="updateTitle" />
+    </v-main>
+</v-layout>

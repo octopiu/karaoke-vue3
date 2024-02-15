@@ -1,0 +1,53 @@
+<v-container>
+    <v-row justify="space-around">
+            <v-card class="pa-2 ma-2">
+                <v-card-title>{{ clip.title }}</v-card-title>
+                <v-card-text>
+                    <div id="player"></div>
+                </v-card-text>
+            </v-card>
+            <v-card class="pa-2 ma-2">
+                <v-form>
+                    <v-container>
+                        <v-row>
+                            <v-responsive
+                              class="mx-auto"
+                              width="344"
+                            >
+                                <v-text-field
+                                  placeholder="Clip start"
+                                  label="Clip start"
+                                  v-model="clipStart"
+                                >
+                                    <template v-slot:append-inner>
+                                        <v-btn size="x-small" @click="setStart">Set current time</v-btn>
+                                    </template>
+                                </v-text-field>
+                            </v-responsive>
+                        </v-row>
+                        <v-row>
+                            <v-responsive
+                              class="mx-auto"
+                              width="344"
+                            >
+                                <v-text-field
+                                  placeholder="Clip end"
+                                  label="Clip end"
+                                  v-model="clipEnd"
+                                >
+                                    <template v-slot:append-inner>
+                                        <v-btn size="x-small" @click="setEnd">Set current time</v-btn>
+                                    </template>
+                                </v-text-field>
+                            </v-responsive>
+                        </v-row>
+                        <v-row>
+                            <v-col>
+                                <v-btn color="primary" @click="save">Save</v-btn>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                </v-form>
+            </v-card>
+    </v-row>
+</v-container>
