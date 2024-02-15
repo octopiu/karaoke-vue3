@@ -46,7 +46,7 @@ function extractVideoId(video_url) {
 
 export default {
   components: { KaraokeVideo },
-  template: await fetch('../templates/app.html').then(response => response.text()),
+  template: await fetch('./templates/app.html').then(response => response.text()),
   setup() {
     const selectedVideo = ref('')
 
