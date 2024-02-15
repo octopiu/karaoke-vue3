@@ -4,7 +4,7 @@ let player = null
 
 export default {
   name: 'KaraokeVideo',
-  template: await fetch('/templates/video.html').then(response => response.text()),
+  template: await fetch('../../templates/video.html').then(response => response.text()),
   props: {
     clip: {
       type: Object,
